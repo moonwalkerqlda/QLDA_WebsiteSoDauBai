@@ -29,10 +29,13 @@ _**Chức năng & Mô tả**_
 
   Tên chức năng |  Mô tả
    ---|---
-   Đăng nhập |
-   Ghi nhận sổ đầu bài từng tiết dạy |
-   Điểm danh học sinh |
-   Thực hiện một số minigames nhằm chia nhóm, gọi tên học sinh  |
+   Đăng nhập | Cho phép người dùng đăng nhập vào hệ thống |
+   Ghi nhận sổ đầu bài từng tiết dạy | Cho phép giáo viên ghi lại các thông tin của tiết dạy |
+   Báo cáo kiểm tra | Cho phép BGH nhà trường kiểm tra tiến độ chất lượng giảng dạy |
+   Điểm danh học sinh | Cho phép giáo viên điểm danh các học sinh trong tiết dạy |
+   Phân công giảng dạy | Cho phép có thể phân công giáo viên dạy thay, hoặc dạy bù |
+   Thực hiện một số minigames nhằm chia nhóm, gọi tên học sinh | Hỗ trợ giáo viên tổ chức hoạt động lớp học |
+   Xuất sổ ra được file export | Cho phép xuất dữ liệu từ hệ thống ra file để lưu trữ hoặc xử lý bên ngoài |
 
 _**Liên hệ**_
 >Để hiểu thêm về phần mềm này các bạn có thể liên hệ với chúng tôi qua đây!
