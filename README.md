@@ -40,7 +40,7 @@ _**Chức năng & Mô tả**_
 _**Liên hệ**_
 >Để hiểu thêm về phần mềm này các bạn có thể liên hệ với chúng tôi qua đây!
 
-[![N|Solid](https://sites.google.com/gm.uit.edu.vn/moonwalkerqlda)]() [![N|Solid](https://i.imgur.com/sO4jd9m.png)](https://www.facebook.com/neyudmi)
+[![N|Solid](https://i.imgur.com/sO4jd9m.png)](https://www.facebook.com/neyudmi)
 
 
 
