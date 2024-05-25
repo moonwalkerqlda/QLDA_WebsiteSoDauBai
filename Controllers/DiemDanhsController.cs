@@ -9,23 +9,23 @@ using QLY_HOCSINH.Models;
 
 namespace QLY_HOCSINH.Controllers
 {
-    public class DiemDanhController : Controller
+    public class DiemDanhsController : Controller
     {
         private readonly QlyHocSinhContext _context;
 
-        public DiemDanhController(QlyHocSinhContext context)
+        public DiemDanhsController(QlyHocSinhContext context)
         {
             _context = context;
         }
 
-        // GET: DiemDanh
+        // GET: DiemDanhs
         public async Task<IActionResult> Index()
         {
-            var qlyHocSinhContext = _context.DiemDanh.Include(d => d.Hs).Include(d => d.Lop);
+            var qlyHocSinhContext = _context.DiemDanhs.Include(d => d.Hs).Include(d => d.Lop);
             return View(await qlyHocSinhContext.ToListAsync());
         }
 
-        // GET: DiemDanh/Details/5
+        // GET: DiemDanhs/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,7 +33,7 @@ namespace QLY_HOCSINH.Controllers
                 return NotFound();
             }
 
-            var diemDanh = await _context.DiemDanh
+            var diemDanh = await _context.DiemDanhs
                 .Include(d => d.Hs)
                 .Include(d => d.Lop)
                 .FirstOrDefaultAsync(m => m.DiemDanhId == id);
@@ -45,7 +45,7 @@ namespace QLY_HOCSINH.Controllers
             return View(diemDanh);
         }
 
-        // GET: DiemDanh/Create
+        // GET: DiemDanhs/Create
         public IActionResult Create()
         {
             ViewData["HsId"] = new SelectList(_context.HocSinhs, "HsId", "HsId");
@@ -53,7 +53,7 @@ namespace QLY_HOCSINH.Controllers
             return View();
         }
 
-        // POST: DiemDanh/Create
+        // POST: DiemDanhs/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -71,7 +71,7 @@ namespace QLY_HOCSINH.Controllers
             return View(diemDanh);
         }
 
-        // GET: DiemDanh/Edit/5
+        // GET: DiemDanhs/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -79,7 +79,7 @@ namespace QLY_HOCSINH.Controllers
                 return NotFound();
             }
 
-            var diemDanh = await _context.DiemDanh.FindAsync(id);
+            var diemDanh = await _context.DiemDanhs.FindAsync(id);
             if (diemDanh == null)
             {
                 return NotFound();
@@ -89,7 +89,7 @@ namespace QLY_HOCSINH.Controllers
             return View(diemDanh);
         }
 
-        // POST: DiemDanh/Edit/5
+        // POST: DiemDanhs/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -126,7 +126,7 @@ namespace QLY_HOCSINH.Controllers
             return View(diemDanh);
         }
 
-        // GET: DiemDanh/Delete/5
+        // GET: DiemDanhs/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -134,7 +134,7 @@ namespace QLY_HOCSINH.Controllers
                 return NotFound();
             }
 
-            var diemDanh = await _context.DiemDanh
+            var diemDanh = await _context.DiemDanhs
                 .Include(d => d.Hs)
                 .Include(d => d.Lop)
                 .FirstOrDefaultAsync(m => m.DiemDanhId == id);
@@ -146,15 +146,15 @@ namespace QLY_HOCSINH.Controllers
             return View(diemDanh);
         }
 
-        // POST: DiemDanh/Delete/5
+        // POST: DiemDanhs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var diemDanh = await _context.DiemDanh.FindAsync(id);
+            var diemDanh = await _context.DiemDanhs.FindAsync(id);
             if (diemDanh != null)
             {
-                _context.DiemDanh.Remove(diemDanh);
+                _context.DiemDanhs.Remove(diemDanh);
             }
 
             await _context.SaveChangesAsync();
@@ -163,7 +163,7 @@ namespace QLY_HOCSINH.Controllers
 
         private bool DiemDanhExists(int id)
         {
-            return _context.DiemDanh.Any(e => e.DiemDanhId == id);
+            return _context.DiemDanhs.Any(e => e.DiemDanhId == id);
         }
     }
 }

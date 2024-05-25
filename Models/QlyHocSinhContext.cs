@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
-using QLY_HOCSINH.Models;
 
 namespace QLY_HOCSINH.Models;
 
@@ -16,7 +15,7 @@ public partial class QlyHocSinhContext : DbContext
     {
     }
 
-    
+    public virtual DbSet<DiemDanh> DiemDanhs { get; set; }
 
     public virtual DbSet<GiaoVien> GiaoViens { get; set; }
 
@@ -34,7 +33,34 @@ public partial class QlyHocSinhContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-       
+        modelBuilder.Entity<DiemDanh>(entity =>
+        {
+            entity.HasKey(e => e.DiemDanhId).HasName("PK_DIEM_DANH_1");
+
+            entity.ToTable("DIEM_DANH");
+
+            entity.Property(e => e.DiemDanhId).HasColumnName("DIEM_DANH_ID");
+            entity.Property(e => e.HsId)
+                .HasMaxLength(10)
+                .IsUnicode(false)
+                .HasColumnName("HS_ID");
+            entity.Property(e => e.LopId)
+                .HasMaxLength(10)
+                .IsUnicode(false)
+                .HasColumnName("LOP_ID");
+            entity.Property(e => e.Ngay).HasColumnName("NGAY");
+            entity.Property(e => e.TrangThai)
+                .HasMaxLength(20)
+                .HasColumnName("TRANG_THAI");
+
+            entity.HasOne(d => d.Hs).WithMany(p => p.DiemDanhs)
+                .HasForeignKey(d => d.HsId)
+                .HasConstraintName("FK_DIEM_DANH_HOC_SINH1");
+
+            entity.HasOne(d => d.Lop).WithMany(p => p.DiemDanhs)
+                .HasForeignKey(d => d.LopId)
+                .HasConstraintName("FK_DIEM_DANH_LOP_HOC1");
+        });
 
         modelBuilder.Entity<GiaoVien>(entity =>
         {
@@ -93,10 +119,17 @@ public partial class QlyHocSinhContext : DbContext
                 .HasMaxLength(10)
                 .IsUnicode(false)
                 .HasColumnName("HS_ID");
+            entity.Property(e => e.Diachi)
+                .HasMaxLength(50)
+                .HasColumnName("DIACHI");
+            entity.Property(e => e.Gioitinh)
+                .HasMaxLength(10)
+                .HasColumnName("GIOITINH");
             entity.Property(e => e.HoTen)
                 .HasMaxLength(10)
                 .IsFixedLength()
                 .HasColumnName("HO_TEN");
+            entity.Property(e => e.Sdt).HasColumnName("SDT");
         });
 
         modelBuilder.Entity<LopHoc>(entity =>
@@ -140,6 +173,7 @@ public partial class QlyHocSinhContext : DbContext
 
             entity.HasOne(d => d.Hs).WithMany(p => p.XepLops)
                 .HasForeignKey(d => d.HsId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_XEP_LOP_HOC_SINH1");
 
             entity.HasOne(d => d.Lop).WithMany(p => p.XepLops)
@@ -151,6 +185,4 @@ public partial class QlyHocSinhContext : DbContext
     }
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
-
-public DbSet<QLY_HOCSINH.Models.DiemDanh> DiemDanh { get; set; } = default!;
 }
