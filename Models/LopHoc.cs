@@ -11,6 +11,7 @@ public partial class LopHoc
 
     public string? GvId { get; set; }
 
+    public virtual ICollection<DiemDanh> DiemDanhs { get; set; } = new List<DiemDanh>();
 
     public virtual ICollection<GnSoDauBai> GnSoDauBais { get; set; } = new List<GnSoDauBai>();
 
