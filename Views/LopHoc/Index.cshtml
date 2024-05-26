@@ -32,9 +32,9 @@
                 @Html.DisplayFor(modelItem => item.Gv.GvId)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.LopId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.LopId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.LopId">Delete</a>
+                    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.LopId">Edit</a> |
+                    <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.LopId">Details</a> |
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.LopId">Delete</a>
             </td>
         </tr>
 }
