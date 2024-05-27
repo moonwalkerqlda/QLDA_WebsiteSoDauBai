@@ -21,9 +21,9 @@ Website này cho phép giáo viên thực hiện các thao tác như điểm dan
  - Ngày Kết Thúc Dự Kiến: 29/2/2024
 
 _**Công cụ sử dụng**_
- - Công cụ thiết kế: Visio.
- - Công cụ lập trình: Visual Studio 2015.
- - Ngôn ngữ lập trình: Java.
+ - Công cụ thiết kế: Draw.io.
+ - Công cụ lập trình: Visual Studio 2022.
+ - Ngôn ngữ lập trình: C# và HTML.
 
 _**Chức năng & Mô tả**_
 
