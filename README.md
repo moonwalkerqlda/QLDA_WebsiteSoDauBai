@@ -2,7 +2,7 @@
 [![N|Solid](https://i.imgur.com/co6SMdm.png)](https://www.uit.edu.vn/)
 
 ---
-# Tên đề tài: Website sổ đầu bài của một trường  trung học phổ thông
+# Tên đề tài: Website sổ đầu bài của một trường trung học phổ thông
 
 ### Giới thiệu nhóm
 
@@ -17,7 +17,7 @@ Dự án Website sổ đầu bài được cho trường Phổ thông Trung họ
 
 Website này cho phép giáo viên thực hiện các thao tác như điểm danh học sinh, báo vắng, kiểm tra lớp học,... một cách thuận tiện hơn. Ngoài ra trang web có thiết kế giao diện thân thiện và đơn giản, được tích hợp nhiều tính năng hỗ trợ quản lý, phù hợp cho cả nhưng giáo viên lần đầu sử dụng.
 
- - Ngày bắt đầu: 21/02/2024
+ - Ngày Bắt Đầu: 21/02/2024
  - Ngày Kết Thúc Dự Kiến: 29/2/2024
 
 _**Công cụ sử dụng**_
